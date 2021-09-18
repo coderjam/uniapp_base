@@ -1,9 +1,13 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		<u-icon name="level" color="#2979ff" size="28"></u-icon>
+		<u-button>默认按钮</u-button>
+		<u-button type="primary">主要按钮</u-button>
+		<u-button type="success">成功按钮</u-button>
+		<u-button type="info">信息按钮</u-button>
+		<u-button type="warning">警告按钮</u-button>
+		<u-button type="error">危险按钮</u-button>
+		<div>{{vuex_user.name}}</div>
 	</view>
 </template>
 
@@ -11,11 +15,12 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+
 			}
 		},
 		onLoad() {
-
+			this.$u.vuex('vuex_user.name', '诗圣');
+			this.$u.toast('Hello uView!');
 		},
 		methods: {
 
@@ -23,7 +28,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;
