@@ -22,14 +22,24 @@
 			this.$u.vuex('vuex_user.name', '诗圣');
 			this.$u.toast('Hello uView!');
 			// 调用getSearch接口
-			this.$u.api.getSearch({
-				id: 777
-			}).then(res => {
-				console.log(res);
-			})
+			this.getSearch()
+			this.getInfo()
 		},
 		methods: {
-
+			async getSearch(){
+				let params = {
+					id:111
+				}
+				let res = await this.$u.api.getSearch(params)
+				console.log('res',res)
+			},
+			async getInfo(){
+				let params = {
+					id:222
+				}
+				let res = await this.$u.api.getInfo(params)
+				console.log(res)
+			}
 		}
 	}
 </script>
