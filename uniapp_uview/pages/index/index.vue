@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<u-icon name="level" color="#2979ff" size="28"></u-icon>
-		<u-button>默认按钮</u-button>
+		<u-button @click="onToPage">跳转分包页面</u-button>
 		<u-button type="primary">主要按钮</u-button>
 		<u-button type="success">成功按钮</u-button>
 		<u-button type="info">信息按钮</u-button>
@@ -26,6 +26,11 @@
 			this.getInfo()
 		},
 		methods: {
+			onToPage(){
+				uni.navigateTo({
+				    url: '/package_sub/pages/index/index'
+				});
+			},
 			async getSearch(){
 				let params = {
 					id:111

@@ -20,11 +20,11 @@ const install = (Vue, vm) => {
 
 	// 请求拦截部分，如配置，每次请求前都会执行
 	Vue.prototype.$u.http.interceptor.request = (config) => {
-		console.log('config', config)
+		console.log('config-http', config)
 		// 引用token
 		// 方式一，存放在vuex的token，假设使用了uView封装的vuex方式
 		// 见：https://uviewui.com/components/globalVariable.html
-		// config.header.token = vm.token;
+		config.header.token = vm.vuex_token;
 
 		// 方式二，如果没有使用uView封装的vuex方法，那么需要使用$store.state获取
 		// config.header.token = vm.$store.state.token;
@@ -36,10 +36,9 @@ const install = (Vue, vm) => {
 		// 所以哪怕您重新登录修改了Storage，下一次的请求将会是最新值
 		// const token = uni.getStorageSync('token');
 		// config.header.token = token;
-		config.header.Token = 'xxxxxx';
 
 		// 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
-		if (config.url == '/user/login') config.header.noToken = true;
+		if (config.url == '/test/jam') config.header.noToken = true;
 		// 最后需要将config进行return
 		return config;
 		// 如果return一个false值，则会取消本次请求
@@ -48,6 +47,7 @@ const install = (Vue, vm) => {
 
 	// 响应拦截，如配置，每次请求结束都会执行本方法
 	Vue.prototype.$u.http.interceptor.response = (res) => {
+		console.log('res-http',res)
 		if (res.code == 200) {
 			// res为服务端返回值，可能有code，result等字段
 			// 这里对res.result进行返回，将会在this.$u.post(url).then(res => {})的then回调中的res的到
@@ -55,11 +55,11 @@ const install = (Vue, vm) => {
 			return res.result;
 		} else if (res.code == 201) {
 			// 假设201为token失效，这里跳转登录
-			vm.$u.toast('验证失败，请重新登录');
-			setTimeout(() => {
-				// 此为uView的方法，详见路由相关文档
-				vm.$u.route('/pages/user/login')
-			}, 1500)
+			// vm.$u.toast('验证失败，请重新登录');
+			// setTimeout(() => {
+			// 	// 此为uView的方法，详见路由相关文档
+			// 	vm.$u.route('/pages/user/login')
+			// }, 1500)
 			return false;
 		} else {
 			// 如果返回false，则会调用Promise的reject回调，
