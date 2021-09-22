@@ -21,6 +21,12 @@
 		onLoad() {
 			this.$u.vuex('vuex_user.name', '诗圣');
 			this.$u.toast('Hello uView!');
+			// 调用getSearch接口
+			this.$u.api.getSearch({
+				id: 777
+			}).then(res => {
+				console.log(res);
+			})
 		},
 		methods: {
 
