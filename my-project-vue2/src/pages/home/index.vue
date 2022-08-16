@@ -3,6 +3,7 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{ title }}</text>
+			<text>{{ vuex_user.name }}</text>
 		</view>
 		<u-button @click="onToPage">跳转分包页面</u-button>
 		<u-button type="primary">主要按钮</u-button>
@@ -21,7 +22,10 @@ export default {
 		}
 	},
 	onLoad() {
-
+		console.log(888, this.$u.trim(' abc 1 '))
+		// this.$u.vuex('vuex_user.name', '诗圣');
+		this.$u.toast('Hello uView!');
+		this.getInfo()
 	},
 	methods: {
 		onToPage() {
@@ -29,6 +33,13 @@ export default {
 				url: '/pages_sub/home/index'
 			});
 		},
+		async getInfo() {
+			let params = {
+				id: 222
+			}
+			let res = await this.$u.api.getInfo(params)
+			console.log(res)
+		}
 	}
 }
 </script>
