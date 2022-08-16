@@ -1,19 +1,26 @@
 # my-project-vue2
 
-## Project setup
+## 安装依赖
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 开发微信小程序
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+yarn dev:mp-weixin
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 打包微信小程序
+```
+yarn build:mp-weixin
+```
+
+### 更多命令
+具体命令可看文件 package.json，或者 [文档](https://uniapp.dcloud.net.cn/worktile/CLI.html).
+
+### 注意
+uview ui 需要安装 node-sass，必须对应相应的node版本。主要注意以下几个库的版本：
+1. node -v // v14.20.0
+2. vue --version //@vue/cli 4.5.19
+3. node-sass //4.14.1
+4. sass-loader //^10.1.1
