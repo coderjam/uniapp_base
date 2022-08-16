@@ -19,7 +19,7 @@ yarn build:mp-weixin
 具体命令可看文件 package.json，或者 [文档](https://uniapp.dcloud.net.cn/worktile/CLI.html).
 
 ### 注意
-uview ui 需要安装 node-sass，必须对应相应的node版本。主要注意以下几个库的版本：
+uview ui 需要安装 node-sass，必须对应相应的node版本。主要注意以下几个库的版本，其他可用的版本请自行测试。
 1. node -v // v14.20.0
 2. vue --version //@vue/cli 4.5.19
 3. node-sass //4.14.1
