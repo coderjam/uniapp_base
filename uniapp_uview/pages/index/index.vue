@@ -22,8 +22,8 @@
 			this.$u.vuex('vuex_user.name', '诗圣');
 			this.$u.toast('Hello uView!');
 			// 调用getSearch接口
-			this.getSearch()
-			this.getInfo()
+			// this.getSearch()
+			// this.getInfo()
 		},
 		methods: {
 			onToPage(){

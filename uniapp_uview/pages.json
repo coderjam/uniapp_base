@@ -1,12 +1,15 @@
 {
-	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
-	},
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "uni-app-user",
+				"navigationStyle": "custom"
 			}
 		}
 	],
@@ -20,10 +23,30 @@
 		}]
 	}],
 	"preloadRule": {
-	        "package_sub/pages/index/index": {
-	            "network": "all",
-	            "packages": ["__APP__"]
-	        }
+		"package_sub/pages/index/index": {
+			"network": "all",
+			"packages": ["__APP__"]
+		}
+	},
+	"tabBar": {
+		"color": "#515151",
+		"selectedColor": "#1296db",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/img/tab-1.png",
+			"selectedIconPath": "static/img/tab-1-active.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/user/index",
+			"iconPath": "static/img/tab-2.png",
+			"selectedIconPath": "static/img/tab-2-active.png",
+			"text": "我的"
+		}]
+	},
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
