@@ -25,7 +25,7 @@ export default {
 		console.log(888, this.$u.trim(' abc 1 '))
 		// this.$u.vuex('vuex_user.name', '诗圣');
 		this.$u.toast('Hello uView!');
-		this.getInfo()
+		// this.getInfo()
 	},
 	methods: {
 		onToPage() {
