@@ -1,4 +1,5 @@
-const mode = 'devOnline'; //devLocal：本地测试、devOnline：线上测试、production：生产环境
+//devLocal：本地测试、devOnline：线上测试、production：生产环境
+const mode = 'devOnline'; 
 let ROOTPATH = '';  //域名
 switch (mode) {
 	case 'devLocal':

@@ -28,7 +28,7 @@
 		methods: {
 			onToPage(){
 				uni.navigateTo({
-				    url: '/package_sub/pages/index/index'
+				    url: '/package_sub/pages/home/index'
 				});
 			},
 			async getSearch(){

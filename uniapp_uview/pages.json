@@ -1,6 +1,6 @@
 {
 	"pages": [{
-			"path": "pages/index/index",
+			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
@@ -16,14 +16,14 @@
 	"subPackages": [{
 		"root": "package_sub",
 		"pages": [{
-			"path": "pages/index/index",
+			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "分包页面sub_index"
 			}
 		}]
 	}],
 	"preloadRule": {
-		"package_sub/pages/index/index": {
+		"package_sub/pages/home/index": {
 			"network": "all",
 			"packages": ["__APP__"]
 		}
@@ -34,7 +34,7 @@
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
-			"pagePath": "pages/index/index",
+			"pagePath": "pages/home/index",
 			"iconPath": "static/img/tab-1.png",
 			"selectedIconPath": "static/img/tab-1-active.png",
 			"text": "首页"
