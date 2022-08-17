@@ -1,2 +1,2 @@
 # uniapp_base
-uni-app 示例
+其中 uniapp 和 uniapp_uview 为 HBuilderX 版本，其他为 cli 版本
