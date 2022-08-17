@@ -22,7 +22,7 @@ import httpInterceptor from '@/common/http.interceptor.js'
 Vue.use(httpInterceptor, app)
 
 // http接口API集中管理引入部分
-import httpApi from '@/common/http.api.js'
+import httpApi from '@/api/http.api.js'
 Vue.use(httpApi, app)
 
 app.$mount()
