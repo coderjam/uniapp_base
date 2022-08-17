@@ -12,6 +12,9 @@
 		<u-button type="warning">警告按钮</u-button>
 		<u-button type="error">危险按钮</u-button>
 
+		<!-- 自定义的组件，已配置easycom，无需引入 -->
+		<lb-button></lb-button>
+
 		<!-- 自定义tabbar -->
 		<!-- <u-tabbar :list="vuex_tabbar" :mid-button="true"></u-tabbar> -->
 	</view>
@@ -19,29 +22,29 @@
 
 <script>
 export default {
-	data() {
-		return {
-			title: 'Hello lanba jam!'
-		}
-	},
-	onLoad() {
-		this.$u.vuex('vuex_user.name', '诗圣');
-		this.$u.toast('Hello uView!');
-		// this.getInfo()
-	},
-	methods: {
-		onToPage() {
-			uni.navigateTo({
-				url: '/pages_sub/home/index'
-			});
-		},
-		async getInfo() {
-			let params = {
-				id: 222
-			}
-			let res = await this.$u.api.getInfo(params)
-		}
-	}
+    data() {
+        return {
+            title: "Hello lanba jam!"
+        };
+    },
+    onLoad() {
+        this.$u.vuex("vuex_user.name", "诗圣");
+        this.$u.toast("Hello uView!");
+        // this.getInfo()
+    },
+    methods: {
+        onToPage() {
+            uni.navigateTo({
+                url: "/pages_sub/home/index"
+            });
+        },
+        async getInfo() {
+            let params = {
+                id: 222
+            };
+            let res = await this.$u.api.getInfo(params);
+        }
+    },
 }
 </script>
 
