@@ -22,8 +22,7 @@ export default {
 		}
 	},
 	onLoad() {
-		console.log(888, this.$u.trim(' abc 1 '))
-		// this.$u.vuex('vuex_user.name', '诗圣');
+		this.$u.vuex('vuex_user.name', '诗圣');
 		this.$u.toast('Hello uView!');
 		this.getInfo()
 	},
@@ -38,7 +37,6 @@ export default {
 				id: 222
 			}
 			let res = await this.$u.api.getInfo(params)
-			console.log(res)
 		}
 	}
 }

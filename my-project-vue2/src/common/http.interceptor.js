@@ -1,4 +1,3 @@
-console.log(1234,process.env);
 // 这里的Vue为Vue对象(非创建出来的实例)，vm为main.js中“Vue.use(httpInterceptor, app)”这一句的第二个参数，
 // 为一个Vue的实例，也即每个页面的"this"
 // 如果需要了解这个install方法是什么，请移步：https://uviewui.com/components/vueUse.html
@@ -19,7 +18,6 @@ const install = (Vue, vm) => {
 
 	// 请求拦截部分，如配置，每次请求前都会执行
 	Vue.prototype.$u.http.interceptor.request = (config) => {
-		console.log('config-http', config)
 		// 引用token
 		// 方式一，存放在vuex的token，假设使用了uView封装的vuex方式
 		// 见：https://uviewui.com/components/globalVariable.html
@@ -46,7 +44,6 @@ const install = (Vue, vm) => {
 
 	// 响应拦截，如配置，每次请求结束都会执行本方法
 	Vue.prototype.$u.http.interceptor.response = (res) => {
-		console.log('res-http',res)
 		if (res.code == 200) {
 			// res为服务端返回值，可能有code，result等字段
 			// 这里对res.result进行返回，将会在this.$u.post(url).then(res => {})的then回调中的res的到
