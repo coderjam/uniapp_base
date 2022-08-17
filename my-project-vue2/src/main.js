@@ -1,18 +1,19 @@
-import Vue from 'vue'
 import App from './App'
-import uView from "uview-ui";
+import Vue from 'vue'
+import uView from "uview-ui"
 import store from '@/store';
-
-Vue.config.productionTip = false
-App.mpType = 'app'
 Vue.use(uView);
 
 // 引入uView提供的对vuex的简写法文件
-// let vuexStore = require('@/store/$u.mixin.js');
-// Vue.mixin(vuexStore);
+let vuexStore = require('@/store/$u.mixin.js');
+Vue.mixin(vuexStore);
 
+
+Vue.config.productionTip = false
+App.mpType = 'app'
 const app = new Vue({
-  ...App
+	store,
+    ...App
 })
 
 // http拦截器，此为需要加入的内容
