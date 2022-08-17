@@ -1,7 +1,7 @@
 //api集合
 let apiApp = {
-	getInfo: '/api/getInfo',
-	postInfo: '/api/postInfo'
+	getInfo: '/getInfo',
+	postInfo: '/postInfo'
 }
 // 此处第二个参数vm，就是我们在页面使用的this，你可以通过vm获取vuex等操作
 const install = (Vue, vm) => {
