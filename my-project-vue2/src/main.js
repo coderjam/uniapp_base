@@ -26,3 +26,5 @@ import httpApi from '@/api/http.api.js'
 Vue.use(httpApi, app)
 
 app.$mount()
+
+ 
